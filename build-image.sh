@@ -80,6 +80,11 @@ set -x
 
 source /manifest
 
+pacman-key --init
+pacman -Sy --needed archlinux-keyring
+pacman-key --populate archlinux
+pacman-key --refresh-keys
+
 pacman-key --populate
 
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
